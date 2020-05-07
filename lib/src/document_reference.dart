@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart' as fs;
 import 'package:stove/src/collection.dart';
-import 'package:stove/src/document_data.dart';
 import 'package:stove/src/document_snapshot.dart';
 import 'package:stove/src/sub_collection.dart';
+
+import 'document_difference.dart';
 
 class DocumentReference<T> {
   DocumentReference({
@@ -35,11 +36,11 @@ class DocumentReference<T> {
         .then((snapshot) => DocumentSnapshot(snapshot));
   }
 
-  Future<void> setData(DocumentData<T> newData, {bool merge = false}) {
+  Future<void> setData(DocumentDifference<T> newData, {bool merge = false}) {
     return _reference.setData(newData.toMap(), merge: merge);
   }
 
-  Future<void> updateData(DocumentData<T> diff) {
+  Future<void> updateData(DocumentDifference<T> diff) {
     return _reference.updateData(diff.toMap());
   }
 
