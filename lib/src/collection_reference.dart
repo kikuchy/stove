@@ -1,21 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart' as fs;
 import 'package:flutter/foundation.dart';
+import 'package:stove/src/document_difference.dart';
 import 'package:stove/src/document_reference.dart';
-import 'package:stove/src/field.dart';
 import 'package:stove/src/query.dart';
 
-class Collection<T> extends Query<T> {
-  Collection({@required this.reference}) : super(reference);
+class CollectionReference<T> extends Query<T> {
+  CollectionReference({@required this.reference}) : super(reference);
   final fs.CollectionReference reference;
 
   DocumentReference<T> document(String id) {
     return DocumentReference(id: id, collectionReference: reference);
   }
 
-  Future<DocumentReference<T>> add<FT, LT>(Map<Field<T, FT, LT>, dynamic> data) {
+  Future<DocumentReference<T>> add<FT, LT>(DocumentDifference<T> newData) {
     return reference
-        .add(data.map((key, value) => MapEntry(
-            key.name, (value != null) ? key.localToStore(value) : null)))
+        .add(newData.toMap())
         .then((reference) => DocumentReference.fromReference(reference));
   }
 

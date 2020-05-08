@@ -20,6 +20,7 @@ class UserField<FT, LT> implements Field<User, FT, LT> {
           (l) => l.toString().split(".")[1]);
   static final profile = UserField._("profile",
           (f) => Profile(school: f["school"]), (l) => {"school": l.school});
+  static final tags = UserField<List<String>, List<String>>._("tags", identity, identity);
 }
 
 class UserChildren<C> implements SubCollection<User, C> {

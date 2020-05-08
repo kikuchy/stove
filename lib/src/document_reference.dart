@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart' as fs;
-import 'package:stove/src/collection.dart';
+import 'package:stove/src/collection_reference.dart';
 import 'package:stove/src/document_snapshot.dart';
 import 'package:stove/src/sub_collection.dart';
 
@@ -9,7 +9,7 @@ class DocumentReference<T> {
   DocumentReference({
     String id,
     fs.CollectionReference collectionReference,
-    Collection collection,
+    CollectionReference collection,
   }) : assert(collectionReference != null || collection != null) {
     if (collectionReference != null) {
       _reference = collectionReference.document(id);
@@ -48,7 +48,7 @@ class DocumentReference<T> {
     return _reference.delete();
   }
 
-  Collection<C> subCollection<C>(SubCollection<T, C> subCollection) {
-    return Collection(reference: _reference.collection(subCollection.name));
+  CollectionReference<C> subCollection<C>(SubCollection<T, C> subCollection) {
+    return CollectionReference(reference: _reference.collection(subCollection.name));
   }
 }
