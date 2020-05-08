@@ -1,7 +1,7 @@
 part of stove;
 
 class CollectionReference<T> extends Query<T> {
-  CollectionReference({@required this.reference}) : super(reference);
+  CollectionReference(this.reference) : super(reference);
   final fs.CollectionReference reference;
 
   DocumentReference<T> document(String id) {

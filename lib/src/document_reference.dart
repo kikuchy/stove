@@ -44,6 +44,6 @@ class DocumentReference<T> {
   }
 
   CollectionReference<C> subCollection<C>(SubCollection<T, C> subCollection) {
-    return CollectionReference(reference: _reference.collection(subCollection.name));
+    return CollectionReference(_reference.collection(subCollection.name));
   }
 }
