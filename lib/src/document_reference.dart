@@ -1,9 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart' as fs;
-import 'package:stove/src/collection_reference.dart';
-import 'package:stove/src/document_snapshot.dart';
-import 'package:stove/src/sub_collection.dart';
-
-import 'document_difference.dart';
+part of stove;
 
 class DocumentReference<T> {
   DocumentReference({

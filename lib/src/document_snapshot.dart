@@ -1,6 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart' as fs;
-import 'package:stove/src/document_data.dart';
-import 'package:stove/src/document_reference.dart';
+part of stove;
 
 class DocumentSnapshot<T> {
   DocumentSnapshot(this._snapshot):assert(_snapshot != null);

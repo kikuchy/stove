@@ -1,6 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart' as fs;
-import 'package:stove/src/document_difference.dart';
-import 'package:stove/src/document_reference.dart';
+part of stove;
 
 class WriteBatch {
   WriteBatch(this._delegate) : assert(_delegate != null);

@@ -1,7 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart' as fs;
-import 'package:stove/src/document_difference.dart';
-import 'package:stove/src/document_reference.dart';
-import 'package:stove/src/document_snapshot.dart';
+part of stove;
 
 typedef Future<dynamic> TransactionHandler(Transaction transaction);
 

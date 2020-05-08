@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart' as fs;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:stove/src/document_difference.dart';
 import 'package:stove/stove.dart';
 
 import 'user_document.dart';

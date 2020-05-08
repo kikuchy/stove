@@ -1,4 +1,4 @@
-import 'package:stove/src/field.dart';
+part of stove;
 
 class MutableDocumentData<T> extends DocumentData<T> {
   MutableDocumentData([Map<String, dynamic> initialData]) : super(initialData);

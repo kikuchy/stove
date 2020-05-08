@@ -1,8 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart' as fs;
-import 'package:flutter/foundation.dart';
-import 'package:stove/src/document_difference.dart';
-import 'package:stove/src/document_reference.dart';
-import 'package:stove/src/query.dart';
+part of stove;
 
 class CollectionReference<T> extends Query<T> {
   CollectionReference({@required this.reference}) : super(reference);

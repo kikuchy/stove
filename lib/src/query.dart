@@ -1,6 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart' as fs;
-import 'package:stove/src/document_snapshot.dart';
-import 'package:stove/src/field.dart';
+part of stove;
 
 class Query<T> {
   Query(this._query) : assert(_query != null);

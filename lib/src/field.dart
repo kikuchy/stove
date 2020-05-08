@@ -1,4 +1,4 @@
-import 'package:stove/src/type_converter.dart';
+part of stove;
 
 abstract class Field<D, FT, LT> {
   const Field();

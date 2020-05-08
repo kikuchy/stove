@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+part of stove;
 
 typedef Converter<T, U> = U Function(T);
 
@@ -7,5 +7,5 @@ int numIntConverter(num v) => v.toInt();
 num intNumConverter(int v) => v;
 double numDoubleConverter(num v) => v.toDouble();
 num doubleNumConverter(double v) => v;
-DateTime timestampDateTimeConverter(Timestamp v) => v.toDate();
-Timestamp dateTimeTimestampConverter(DateTime v) => Timestamp.fromDate(v);
+DateTime timestampDateTimeConverter(fs.Timestamp v) => v.toDate();
+fs.Timestamp dateTimeTimestampConverter(DateTime v) => fs.Timestamp.fromDate(v);
