@@ -1,8 +1,7 @@
 name: stove
-description: A new Flutter project.
+description: Thin, but strongly typed wrapper library for cloud_firestore.
 version: 0.0.1
-author: kikuchy
-homepage:
+homepage: https://github.com/kikuchy/stove
 
 environment:
   sdk: ">=2.3.0 <3.0.0"
