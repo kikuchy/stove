@@ -13,13 +13,13 @@ class Query<T> {
     return Query(_query.orderBy(field.name, descending: descending));
   }
 
-  Query<T> where<FT, LT>(
+  Query<T> where<FT, LT, V extends LT>(
     Field<T, FT, LT> field, {
-    LT isEqualTo,
-    LT isLessThan,
-    LT isLessThanOrEqualTo,
-    LT isGreaterThan,
-    LT isGreaterThanOrEqualTo,
+    V isEqualTo,
+    V isLessThan,
+    V isLessThanOrEqualTo,
+    V isGreaterThan,
+    V isGreaterThanOrEqualTo,
     dynamic arrayContains,
     List<dynamic> arrayContainsAny,
     List<dynamic> whereIn,
