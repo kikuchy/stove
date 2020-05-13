@@ -3,7 +3,8 @@ part of stove;
 typedef Future<dynamic> TransactionHandler(Transaction transaction);
 
 class Transaction {
-  Transaction(this._delegate) : assert(_delegate != null);
+  Transaction(this._delegate);
+
   final fs.Transaction _delegate;
 
   Future<DocumentSnapshot<T>> get<T>(DocumentReference<T> reference) {

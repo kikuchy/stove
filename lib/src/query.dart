@@ -1,7 +1,7 @@
 part of stove;
 
 class Query<T> {
-  Query(this._query) : assert(_query != null);
+  Query(this._query);
 
   final fs.Query _query;
 
@@ -15,15 +15,15 @@ class Query<T> {
 
   Query<T> where<FT, LT, V extends LT>(
     Field<T, FT, LT> field, {
-    V isEqualTo,
-    V isLessThan,
-    V isLessThanOrEqualTo,
-    V isGreaterThan,
-    V isGreaterThanOrEqualTo,
-    dynamic arrayContains,
-    List<dynamic> arrayContainsAny,
-    List<dynamic> whereIn,
-    bool isNull,
+    V? isEqualTo,
+    V? isLessThan,
+    V? isLessThanOrEqualTo,
+    V? isGreaterThan,
+    V? isGreaterThanOrEqualTo,
+    dynamic? arrayContains,
+    List<dynamic>? arrayContainsAny,
+    List<dynamic>? whereIn,
+    bool? isNull,
   }) {
     return Query(_query.where(
       field.name,

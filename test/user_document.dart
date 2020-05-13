@@ -38,7 +38,7 @@ enum Gender {
 }
 
 class Profile {
-  const Profile({this.school});
+  const Profile({required this.school});
 
   final String school;
 }

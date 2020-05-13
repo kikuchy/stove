@@ -1,7 +1,7 @@
 part of stove;
 
 class MutableDocumentData<T> extends DocumentData<T> {
-  MutableDocumentData([Map<String, dynamic> initialData]) : super(initialData);
+  MutableDocumentData([Map<String, dynamic>? initialData]) : super(initialData);
 
   void set<FT, LT, V extends LT>(Field<T, FT, LT> field, V value) {
     _data[field.name] = (value != null) ? field.localToStore(value) : null;
@@ -11,12 +11,12 @@ class MutableDocumentData<T> extends DocumentData<T> {
 }
 
 class DocumentData<T> {
-  DocumentData([Map<String, dynamic> initialData])
+  DocumentData([Map<String, dynamic>? initialData])
       : _data = {if (initialData != null) ...initialData};
 
-  final Map<String, dynamic> _data;
+  final Map<String, dynamic?> _data;
 
-  LT get<FT, LT>(Field<T, FT, LT> field) {
+  LT? get<FT, LT>(Field<T, FT, LT> field) {
     final value = _data[field.name];
     return (value != null) ? field.storeToLocal(value) : null;
   }

@@ -37,6 +37,6 @@ void main() {
     final user = MutableDocumentData<User>();
     user.set(UserField.profile, Profile(school: "Somewhere"));
 
-    expect(user.get(UserField.profile).school, "Somewhere");
+    expect(user.get(UserField.profile)?.school, "Somewhere");
   });
 }

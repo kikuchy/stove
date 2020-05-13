@@ -1,7 +1,8 @@
 part of stove;
 
 class WriteBatch {
-  WriteBatch(this._delegate) : assert(_delegate != null);
+  WriteBatch(this._delegate);
+
   final fs.WriteBatch _delegate;
 
   void delete<T>(DocumentReference<T> reference) {

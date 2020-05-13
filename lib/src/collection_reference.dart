@@ -4,7 +4,7 @@ class CollectionReference<T> extends Query<T> {
   CollectionReference(this.reference) : super(reference);
   final fs.CollectionReference reference;
 
-  DocumentReference<T> document([String id]) {
+  DocumentReference<T> document([String? id]) {
     return DocumentReference.fromReference(reference.document(id));
   }
 

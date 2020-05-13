@@ -1,7 +1,7 @@
 part of stove;
 
 class Stove {
-  Stove({fs.Firestore firestore})
+  Stove({fs.Firestore? firestore})
       : firestore = firestore ?? fs.Firestore.instance;
 
   static Stove get instance => Stove();

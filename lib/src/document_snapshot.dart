@@ -1,12 +1,14 @@
 part of stove;
 
 class DocumentSnapshot<T> {
-  DocumentSnapshot(this._snapshot):assert(_snapshot != null);
+  DocumentSnapshot(this._snapshot);
+
   final fs.DocumentSnapshot _snapshot;
 
   DocumentData<T> get data => DocumentData(_snapshot.data);
 
-  DocumentReference<T> get reference => DocumentReference.fromReference(_snapshot.reference);
+  DocumentReference<T> get reference =>
+      DocumentReference.fromReference(_snapshot.reference);
 
   bool get exists => _snapshot.exists;
 

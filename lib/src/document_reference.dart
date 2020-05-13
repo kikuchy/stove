@@ -2,9 +2,9 @@ part of stove;
 
 class DocumentReference<T> {
   DocumentReference({
-    String id,
-    fs.CollectionReference collectionReference,
-    CollectionReference collection,
+    String? id,
+    fs.CollectionReference? collectionReference,
+    CollectionReference? collection,
   }) : assert(collectionReference != null || collection != null) {
     if (collectionReference != null) {
       _reference = collectionReference.document(id);
@@ -15,11 +15,9 @@ class DocumentReference<T> {
   }
 
   DocumentReference.fromReference(fs.DocumentReference reference)
-      : assert(reference != null) {
-    _reference = reference;
-  }
+      : _reference = reference;
 
-  fs.DocumentReference _reference;
+  late fs.DocumentReference _reference;
 
   fs.DocumentReference get reference => _reference;
 
